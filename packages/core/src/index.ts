@@ -203,6 +203,18 @@ export class SynthKitEngine {
     return this.storage.getProject(projectId);
   }
 
+  listSources(projectId: string) {
+    return this.storage.listSources(projectId);
+  }
+
+  listSyntheses(projectId: string) {
+    return this.storage.listSyntheses(projectId);
+  }
+
+  getSynthesisRecord(synthesisId: string) {
+    return this.storage.getSynthesisRecord(synthesisId);
+  }
+
   async ingestText(projectId: string, text: string, title?: string) {
     return this.ingestor.ingestText({ projectId, text, ...(title ? { title } : {}) });
   }

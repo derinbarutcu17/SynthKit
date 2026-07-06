@@ -227,6 +227,111 @@ program
       })
   );
 
+program
+  .command("project")
+  .description("Manage projects")
+  .addCommand(
+    new Command("list")
+      .description("List all projects")
+      .action(async function (this: Command) {
+        const opts = this.optsWithGlobals() as { json?: boolean; root: string };
+        const engine = createEngine(opts.root);
+        const projects = engine.listProjects();
+        output(projects, opts.json ?? false);
+        engine.close();
+      })
+  )
+  .addCommand(
+    new Command("get")
+      .description("Get a project by ID")
+      .argument("<id>", "project ID")
+      .action(async function (this: Command, id: string) {
+        const opts = this.optsWithGlobals() as { json?: boolean; root: string };
+        const engine = createEngine(opts.root);
+        const project = engine.getProject(id);
+        output(project ?? { error: "Project not found", id }, opts.json ?? false);
+        engine.close();
+      })
+  )
+  .addCommand(
+    new Command("sources")
+      .description("List sources in a project")
+      .argument("<id>", "project ID")
+      .action(async function (this: Command, id: string) {
+        const opts = this.optsWithGlobals() as { json?: boolean; root: string };
+        const engine = createEngine(opts.root);
+        const sources = engine.listSources(id);
+        output(sources, opts.json ?? false);
+        engine.close();
+      })
+  )
+  .addCommand(
+    new Command("syntheses")
+      .description("List syntheses in a project")
+      .argument("<id>", "project ID")
+      .action(async function (this: Command, id: string) {
+        const opts = this.optsWithGlobals() as { json?: boolean; root: string };
+        const engine = createEngine(opts.root);
+        const records = engine.listSyntheses(id);
+        output(records.map((r) => ({ id: r.request?.id, mode: r.request?.mode, title: r.request?.title, createdAt: r.request?.createdAt })), opts.json ?? false);
+        engine.close();
+      })
+  );
+
+program
+  .command("synthesis")
+  .description("Inspect synthesis outputs")
+  .addCommand(
+    new Command("get")
+      .description("Get synthesis draft details")
+      .argument("<id>", "synthesis ID")
+      .action(async function (this: Command, id: string) {
+        const opts = this.optsWithGlobals() as { json?: boolean; root: string };
+        const engine = createEngine(opts.root);
+        const draft = engine.getDraft(id);
+        output(draft ?? { error: "Synthesis not found", id }, opts.json ?? false);
+        engine.close();
+      })
+  )
+  .addCommand(
+    new Command("stages")
+      .description("Get synthesis stage trace")
+      .argument("<id>", "synthesis ID")
+      .action(async function (this: Command, id: string) {
+        const opts = this.optsWithGlobals() as { json?: boolean; root: string };
+        const engine = createEngine(opts.root);
+        const record = engine.getSynthesisRecord(id);
+        if (!record) {
+          output({ error: "Synthesis not found", id }, opts.json ?? false);
+        } else {
+          output(record.stageTrace ?? [], opts.json ?? false);
+        }
+        engine.close();
+      })
+  )
+  .addCommand(
+    new Command("exports")
+      .description("List export artifacts for a synthesis")
+      .argument("<id>", "synthesis ID")
+      .action(async function (this: Command, id: string) {
+        const opts = this.optsWithGlobals() as { json?: boolean; root: string };
+        const engine = createEngine(opts.root);
+        output(engine.listExports(id), opts.json ?? false);
+        engine.close();
+      })
+  )
+  .addCommand(
+    new Command("revisions")
+      .description("List revisions for a synthesis")
+      .argument("<id>", "synthesis ID")
+      .action(async function (this: Command, id: string) {
+        const opts = this.optsWithGlobals() as { json?: boolean; root: string };
+        const engine = createEngine(opts.root);
+        output(engine.listRevisions(id), opts.json ?? false);
+        engine.close();
+      })
+  );
+
 program.command("serve").description("Start local servers").addCommand(
   new Command("api").action(async function (this: Command) {
     const opts = this.optsWithGlobals() as { root: string };

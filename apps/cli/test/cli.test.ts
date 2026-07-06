@@ -47,4 +47,18 @@ describe("CLI", () => {
     const citations = JSON.parse(citationsOutput) as Array<{ id: string }>;
     expect(citations.length).toBeGreaterThan(0);
   });
+
+  it("lists projects via project list", () => {
+    const repoRoot = path.resolve(process.cwd(), "../..");
+    const output = execFileSync("pnpm", ["exec", "synthkit", "project", "list", "--json"], {
+      cwd: repoRoot,
+      encoding: "utf8"
+    });
+    const projects = JSON.parse(output) as Array<{ id: string; name: string }>;
+    expect(Array.isArray(projects)).toBe(true);
+    if (projects.length > 0) {
+      expect(projects[0]).toHaveProperty("id");
+      expect(projects[0]).toHaveProperty("name");
+    }
+  });
 });

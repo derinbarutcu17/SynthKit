@@ -489,6 +489,14 @@ export class SynthKitStorage {
     return artifact;
   }
 
+  listSyntheses(projectId: string): SynthesisRecord[] {
+    const rows = this.db
+      .prepare(`SELECT data FROM syntheses WHERE request_id LIKE ? ORDER BY created_at DESC`)
+      .all(`%`) as Array<{ data: string }>;
+    const all = rows.map((row) => parseJson<SynthesisRecord>(row.data));
+    return all.filter((item) => item.request?.projectId === projectId);
+  }
+
   getSynthesisRecord(synthesisId: string): SynthesisRecord | undefined {
     const row = this.db
       .prepare(`SELECT data FROM syntheses WHERE id = ?`)
