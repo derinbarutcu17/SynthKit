@@ -1,0 +1,38 @@
+# Dependabot configuration for SynthKit monorepo
+# Keeps dependencies up to date across all packages
+
+version: 2
+updates:
+  # Root workspace — pnpm lockfile, root package.json, turbo config
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "npm"
+    versioning-strategy: increase
+    groups:
+      dev-dependencies:
+        patterns:
+          - "@types/*"
+          - "typescript"
+          - "tsx"
+          - "vitest"
+          - "eslint*"
+          - "turbo"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # GitHub Actions runners
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "dependencies"
+      - "github-actions"
