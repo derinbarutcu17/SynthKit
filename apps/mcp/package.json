@@ -28,7 +28,7 @@
     "@synthkit/core": "workspace:*",
     "@synthkit/domain": "workspace:*",
     "@synthkit/providers": "workspace:*",
-    "zod": "^4.3.6"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
