@@ -23,7 +23,7 @@
   "devDependencies": {
     "@synthkit/cli": "workspace:*",
     "turbo": "^2.5.8",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "vitest": "^3.2.4",
     "tsx": "^4.20.6"
   }

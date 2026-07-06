@@ -18,8 +18,8 @@ importers:
         specifier: ^2.5.8
         version: 2.9.6
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@24.12.2)(tsx@4.21.0)
@@ -52,8 +52,8 @@ importers:
         specifier: ^4.20.6
         version: 4.21.0
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@24.12.2)(tsx@4.21.0)
@@ -92,8 +92,8 @@ importers:
         specifier: ^4.20.6
         version: 4.21.0
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@24.12.2)(tsx@4.21.0)
@@ -123,8 +123,8 @@ importers:
         specifier: ^4.20.6
         version: 4.21.0
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@24.12.2)(tsx@4.21.0)
@@ -154,8 +154,8 @@ importers:
         specifier: ^24.3.0
         version: 24.12.2
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
 
   packages/domain:
     dependencies:
@@ -167,8 +167,8 @@ importers:
         specifier: ^24.3.0
         version: 24.12.2
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
 
   packages/evals:
     dependencies:
@@ -195,8 +195,8 @@ importers:
         specifier: ^4.20.6
         version: 4.21.0
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
 
   packages/ingest:
     dependencies:
@@ -223,8 +223,8 @@ importers:
         specifier: ^24.3.0
         version: 24.12.2
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@24.12.2)(tsx@4.21.0)
@@ -245,8 +245,8 @@ importers:
         specifier: ^24.3.0
         version: 24.12.2
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
 
   packages/sdk-ts:
     dependencies:
@@ -264,8 +264,8 @@ importers:
         specifier: ^24.3.0
         version: 24.12.2
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
 
   packages/shared:
     devDependencies:
@@ -273,8 +273,8 @@ importers:
         specifier: ^24.3.0
         version: 24.12.2
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
 
   packages/storage:
     dependencies:
@@ -298,8 +298,8 @@ importers:
         specifier: ^24.3.0
         version: 24.12.2
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
 
 packages:
 
@@ -1497,8 +1497,8 @@ packages:
     resolution: {integrity: sha512-OZs6gsjF4vMp32qrCbiVSkrFmXtG/AZhY3t0iAMrMBiAZyV9oALtXO8hsrHbMXF9x6L3grlFuwW2oAz7cav+Gw==}
     engines: {node: '>= 0.6'}
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2677,7 +2677,7 @@ snapshots:
       media-typer: 1.1.0
       mime-types: 3.0.2
 
-  typescript@5.9.3: {}
+  typescript@6.0.3: {}
 
   undici-types@7.16.0: {}
 
