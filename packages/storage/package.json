@@ -20,7 +20,7 @@
   "dependencies": {
     "@synthkit/domain": "workspace:*",
     "@synthkit/shared": "workspace:*",
-    "better-sqlite3": "^11.9.1",
+    "better-sqlite3": "^12.11.1",
     "drizzle-orm": "^0.44.5"
   },
   "devDependencies": {
