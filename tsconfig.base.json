@@ -5,6 +5,7 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "ignoreDeprecations": "6.0",
+    "types": ["node"],
     "baseUrl": ".",
     "paths": {
       "@synthkit/api": ["apps/api/src/index.ts"],
