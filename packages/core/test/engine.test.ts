@@ -37,7 +37,7 @@ describe("SynthKitEngine", () => {
       mode: "brief",
       title: "Revision synthesis"
     });
-    const section = bundle.draft.sections[0];
+    const section = bundle.draft.sections[0]!;
     const revised = engine.reviseSection(bundle.request.id, section.id, "Revised body", "tighten scope");
     expect(revised.revision.after).toBe("Revised body");
     expect(engine.listRevisions(bundle.request.id)).toHaveLength(1);
